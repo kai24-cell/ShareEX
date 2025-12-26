@@ -23,3 +23,10 @@ Java version 17
 ブックマーク
 　重要な投稿を個人でブックマーク可能
 　後で振り返りやすくする
+DemoApplication.java:実行
+application.propertied:Java側から特定のSQLへの指定先を指してる
+Post.java:postテーブルとjavaを繋ぐ(投稿内容,画像のurl,主キーの生成,中間テーブルを介したTagとの紐づけ,日時)
+Tag.java:重複したタグの設定不可,中間テーブルの権限を放棄(Post.javaが持ってる)
+ApiController.java:requestとfile(画像)をpostServiceへ送るコントローラ
+PostService.java:Tagが重複してたらDB内のそれを使って、なかったら新しくつくるって処理を書いたサービス
+PostRepository.java,TagRepository:リポジトリ

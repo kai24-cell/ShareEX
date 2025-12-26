@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>ShareEX</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <script src="app.js" defer></script>
+    
+    
+</head>
+<body>
+    <h1>ShareEX</h1>
+    <nav>
+        <div class="nav-item usage-trigger" id="openModal">使い方</div>
+
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModal">&times;</span>
+                <h2>ShareEXの使い方</h2>
+                <p>1. コメント, タグ, 公開設定, <br>画像を入力します</p>
+                <p>2. 投稿ボタンを押して送信します</p>
+            </div>
+        </div>
+    </nav>
+    <form id="postForm">
+        <div class="center" id="postButton">
+        <select id="visibility">
+            <option value="public">公開</option>
+            <option value="private">自分のみ</option>
+        </select>
+
+
+        <input type="file" id="file" class="hide">
+        
+        <label for="file" class="custom-file-upload btn">
+            画像を選択
+        </label>
+        <input type="text" id="tags" placeholder="タグ (カンマ区切り)"><br>
+        <textarea id="content" placeholder="試行錯誤の内容をメモ..." required></textarea><br>
+        <button type="submit" class="btn">投稿する</button>
+        </div>
+    </form>
+</body>
+</html>

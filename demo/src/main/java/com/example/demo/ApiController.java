@@ -11,14 +11,21 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/api/v1/posts")
 public class ApiController {
+    private final PostService postService;// receive PostService via constructor
+
+    public ApiController(PostService postService) {
+        this.postService = postService;
+    }
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> createPost(
             @RequestPart("data") PostRequest request,
             @RequestPart("file") MultipartFile file) {
-        // 受け取ったデータを処理するロジックをここに実装
-        System.out.println("受け取ったテキスト: " + request.content());
-        System.out.println("受け取ったファイル名: " + file.getOriginalFilename());
+        // received data print to console(for debugging)
+        System.out.println("received text: " + request.content());
+        System.out.println("received file name: " + file.getOriginalFilename());
+
+        postService.savePost(request, file);
 
         return ResponseEntity.ok("Post created successfully");
     }

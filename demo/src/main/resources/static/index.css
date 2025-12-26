@@ -1,0 +1,89 @@
+button:hover {
+    cursor: pointer; 
+    filter: drop-shadow(0 0 10px #fffdef);
+    background-color: #fffdef; 
+}
+.center {
+    text-align: center;
+}
+#postButton {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.btn{
+    padding: 15px 40px;   
+    font-size: 1.2rem;     
+    font-weight: bold;     
+    border-radius: 8px;    
+    border: 1px solid #ccc;
+    transition: 0.3s;      
+}
+.btn:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px #fffdef);
+    background-color: #fffdef;
+    transform: scale(1.05);
+}
+/* ヘッダーの「使い方」の枠 */
+.usage-trigger {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    display: inline-block;
+    position: relative; /* 子要素の基準点にする */
+}
+
+/* 画面中央の説明パネル */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    color: #333;
+    text-align: left;
+}
+
+/* 右上の閉じるボタン */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.modal-overlay {
+    display: none;       
+    position: fixed;     
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1000;       
+}
+.modal-overlay.active {
+    display: block;      
+}
+/*file inputを非表示にする.後で考える*/
+.hide{
+    display:none;
+}
+#tags,#content{
+    width: 400px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#content {
+    height: 150px;       
+    resize: vertical;       
+}
