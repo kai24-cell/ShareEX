@@ -9,5 +9,5 @@ public class PostServiceTest {
     void simpleMathTest() {
         int result = 1 + 1;
         assertEquals(2, result, "1+1は2であるべき");
-    }
+    }// test
 }
