@@ -10,9 +10,15 @@
 </head>
 <body>
     <h1>ShareEX</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="キーワード検索">
+        <button id="searchBtn" class="search-icon-btn">🔍</button>
+    </div>
     <nav>
         <div class="nav-item usage-trigger" id="openModal">使い方</div>
-
+        <div class="nav-item usage-trigger" id="openLoginModal" style="margin-left: 10px;">
+            ログイン/登録
+        </div>
         <div class="modal-overlay" id="modalOverlay">
             <div class="modal-content">
                 <span class="close-btn" id="closeModal">&times;</span>
@@ -22,6 +28,33 @@
             </div>
         </div>
     </nav>
+    <div class="modal-overlay" id="loginModalOverlay">
+    <div class="modal-content">
+        <span class="close-btn" id="closeLoginModal">&times;</span>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+            <button id="showLoginBtn" class="btn" style="background:#0277bd;">ログイン</button>
+            <button id="showRegisterBtn" class="btn" style="background:#ccc;">新規登録</button>
+        </div>
+
+        <div id="loginFormArea">
+            <h2>ログイン</h2>
+            <input type="text" id="loginUsername" placeholder="ユーザー名" style="width:90%; margin-bottom:10px; padding:8px;">
+            <input type="password" id="loginPassword" placeholder="パスワード" style="width:90%; margin-bottom:10px; padding:8px;">
+            <button id="doLoginBtn" class="btn">ログインする</button>
+        </div>
+
+        <div id="registerFormArea" style="display:none;">
+            <h2>新規登録</h2>
+            <input type="text" id="regUsername" placeholder="ユーザー名" style="width:90%; margin-bottom:10px; padding:8px;">
+            <input type="password" id="regPassword" placeholder="パスワード" style="width:90%; margin-bottom:10px; padding:8px;">
+            <button id="doRegisterBtn" class="btn">登録する</button>
+        </div>
+        
+        <p id="authMessage" style="color: red; margin-top: 10px;"></p>
+    </div>
+</div>
+
     <form id="postForm">
         <div class="center" id="postButton">
         <select id="visibility">
@@ -35,6 +68,10 @@
         <label for="file" class="custom-file-upload btn">
             画像を選択
         </label>
+        <div id="previewArea" style="display: none; margin-top: 10px;">
+            <p>選択中の画像:</p>
+            <img id="imagePreview" src="" alt="プレビュー" style="max-width: 200px; max-height: 200px; border-radius: 8px;">
+        </div>
         <input type="text" id="tags" placeholder="タグ (カンマ区切り)"><br>
         <textarea id="content" placeholder="試行錯誤の内容をメモ..." required></textarea><br>
         <button type="submit" class="btn">投稿する</button>

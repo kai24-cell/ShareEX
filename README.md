@@ -18,11 +18,13 @@ Java version 17
 　フリーワード検索
 　関連投稿表示
 管理・制約
-　公開範囲設定、投稿編集・削除・履歴管理
-　招待制運用
+　公開範囲設定、削除
 ブックマーク
 　重要な投稿を個人でブックマーク可能
 　後で振り返りやすくする
+登録機能
+　登録するかしないかは選べて、登録者のみ自身の投稿の削除とブックマークが使える。
+　登録しなかったら投稿と検索だけできる。
 DemoApplication.java:実行
 application.propertied:Java側から特定のSQLへの指定先を指してる
 Post.java:postテーブルとjavaを繋ぐ(投稿内容,画像のurl,主キーの生成,中間テーブルを介したTagとの紐づけ,日時)
@@ -30,3 +32,6 @@ Tag.java:重複したタグの設定不可,中間テーブルの権限を放棄(
 ApiController.java:requestとfile(画像)をpostServiceへ送るコントローラ
 PostService.java:Tagが重複してたらDB内のそれを使って、なかったら新しくつくるって処理を書いたサービス
 PostRepository.java,TagRepository:リポジトリ
+User.java:ユーザーを表すクラス
+
+cntl+f5:スーパーリロード

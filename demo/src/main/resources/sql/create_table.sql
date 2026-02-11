@@ -2,6 +2,7 @@ CREATE TABLE posts (
 	id SERIAL PRIMARY KEY,
 	content TEXT NOT NULL,
 	image_url TEXT,
+	visibility VARCHAR(20) DEFAULT 'PUBLIC',
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
