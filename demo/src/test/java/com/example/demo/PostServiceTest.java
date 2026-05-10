@@ -14,6 +14,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.example.demo.entity.Post;
+import com.example.demo.entity.User;
+import com.example.demo.repository.PostRepository;
+import com.example.demo.service.PostService;
+
 @ExtendWith(MockitoExtension.class)
 class PostServiceTest {
     @Mock

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.service;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,6 +8,13 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.example.demo.dto.PostRequest;
+import com.example.demo.entity.Post;
+import com.example.demo.entity.Tag;
+import com.example.demo.entity.User;
+import com.example.demo.repository.PostRepository;
+import com.example.demo.repository.TagRepository;
 
 import java.nio.file.Path;
 import jakarta.transaction.Transactional;
